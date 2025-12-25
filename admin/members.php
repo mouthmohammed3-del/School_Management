@@ -252,8 +252,7 @@ if (isset($_SESSION['Username'])) {
                         <label class="col-sm-5 control-label">Password</label>
                         <div class="col-sm-9 col-md-10">
                           <input type="password" name="password" class="passowrd form-control" autocomplete="new-password" placeholder="Leave blank to keep current password">
-                          <i style="position: absolute; top:46%; right:46%;"
-                            class="show-pass fa fa-eye fa-2x"></i>
+                          
                         </div>
                       </div>
                       <!-- phoon number  -->
