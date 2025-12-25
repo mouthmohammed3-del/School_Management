@@ -1,3 +1,5 @@
+<!-- page Members  -->
+
 <?php
 session_start();
 $pageTitle = 'Members';
@@ -45,19 +47,18 @@ if (isset($_SESSION['Username'])) {
     <!-- echo "Manager meper page "; -->
     <h1 class="text-center "> Manage members </h1>
     <div class="container">
-      <div class="table-responsive">
         <table class="main-table text-center  table table-bordered ">
           <tr>
-            <td>#ID</td>
-            <td>Username</td>
-            <td>passowrd</td>
-            <td>phone</td>
-            <td>Email</td>
-            <td>fullname</td>
-            <td>role</td>
-            <td>Date</td>
-            <td>grade</td>
-            <td>controle</td>
+            <th>#ID</th>
+            <th>Username</th>
+            <th>passowrd</th>
+            <th>phone</th>
+            <th>Email</th>
+            <th>fullname</th>
+            <th>role</th>
+            <th>Date</th>
+            <th>grade</th>
+            <th>controle</th>
           </tr>
 
           <?php
@@ -103,7 +104,6 @@ if (isset($_SESSION['Username'])) {
 
 
         </table>
-      </div>
 
       <button class="btn btn-primary">
         <a href="members.php?do=insert" class="text-d">Add Member</a>
@@ -119,53 +119,8 @@ if (isset($_SESSION['Username'])) {
 
 
     <?php
-    // جلب جميع الأعضاء من قاعدة البيانات
-    //             $stmt = $db->prepare("SELECT * FROM users");
-    //             $stmt->execute();
-    //             $rows = $stmt->fetchAll();
-    // 
-    //             foreach($rows as $row){
-    //                 echo "<tr>";
-    //                     echo "<td>" . $row['userID'] . "</td>";
-    //                     echo "<td>" . $row['username'] . "</td>";
-    //                     echo "<td>" . $row['passwords'] . "</td>";
-    //                     echo "<td>" . $row['phone'] . "</td>";
-    //                     echo "<td>" . $row['Email'] . "</td>";
-    //                     echo "<td>" . $row['Fullname'] . "</td>";
-    //                     echo "<td>" . $row['role'] . "</td>";
-    //                     echo "<td>" . $row['grade'] . "</td>";
-    // 
-    //                     echo "<td>
-    //                         <a href='members.php?do=Edit&userid=".$row['userID']."' class='btn btn-success btn-sm'>Edit</a>
-    //                         <a href='members.php?do=Delete&userid=".$row['userID']."' class='btn btn-danger btn-sm'>Delete</a>
-    //                     </td>";
-    //                 echo "</tr>";
-    //             }
-    ?>
-    <!-- </table> -->
-    <!-- </div> -->
-
-
-    <!-- </div>
-
-     /<a href="?do=insert"> add student+ </a>'; -->
-    <!-- <h1>
-
-
-  
-    </h1>
-    <div class="container">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-          </div>
-          <div class="panel-body"> --> 
-
-
-
-
-
-          <?php } elseif ($do == 'insert') {
+    
+          } elseif ($do == 'insert') {
           if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $username = $_POST['username'];

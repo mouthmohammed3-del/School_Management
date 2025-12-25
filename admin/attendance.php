@@ -1,64 +1,6 @@
-<?php
-
-session_start();
+<!-- page attendance -->
 
 
-
-
-if (!isset($_SESSION['Username']) || $_SESSION['role'] != 'admin') {
-    header("location: login.php"); 
-  
-    exit();
-  }
-  if (isset($_SESSION['Username'])) {
-  
-     include "init.php";
-  
-    $do = isset($_GET["do"]) ? $_GET["do"] : "Manager";
-  
-    if ($do == 'Manager') {
-  
-// تضمين ملف الاتصال بقاعدة البيانات
-require_once 'config/database.php';
-
-
-// معالجة تسجيل الحضور
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-
-    $input = json_decode(file_get_contents('php://input'), true);
-    
-    if (isset($input['action']) && $input['action'] == 'update_attendance') {
-        $user_id = $input['user_id'];
-        $status = $input['status'];
-        
-        // تحقق إذا كان هناك سجل لليوم
-        $check_sql = "SELECT id FROM attendance WHERE user_id = :user_id AND date = CURDATE()";
-        $check_stmt = $db->prepare($check_sql);
-        $check_stmt->bindParam(':user_id', $user_id);
-        $check_stmt->execute();
-        
-        if ($check_stmt->rowCount() > 0) {
-            // تحديث السجل الموجود
-            $sql = "UPDATE attendance SET status = :status WHERE user_id = :user_id AND date = CURDATE()";
-        } else {
-            // إدخال سجل جديد
-            $sql = "INSERT INTO attendance (user_id, status) VALUES (:user_id, :status)";
-        }
-        
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':user_id', $user_id);
-        $stmt->bindParam(':status', $status);
-        
-        if ($stmt->execute()) {
-            echo json_encode(['success' => true, 'message' => 'تم حفظ الحضور']);
-        } else {
-            echo json_encode(['success' => false, 'message' => 'خطأ في الحفظ']);
-        }
-        exit;
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -67,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>نظام الحضور - لوحة التحكم</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --primary: #4f46e5;
@@ -481,7 +424,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // تحديث حالة الحضور
         async function updateStatus(userId, status) {
             try {
-                const response = await fetch('attendance.php', {
+                const response = await fetch('attendance_api.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -635,6 +578,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </body>
 </html>
 <?php
-    }}
+    
+
+
   
 ?>
