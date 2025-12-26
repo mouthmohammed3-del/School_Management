@@ -51,55 +51,6 @@ body{
 
 }
 
-/* الـ dropdown menu نفسها يجب أن تبقى طبيعيّة */
-/* .dropdown-menu {
-  background-color: #591c1c !important;
-} */
-
-/* فقط العناصر داخل القائمة عند hover */
-/* .dropdown-menu .dropdown-item:hover {
-  background-color: #a329b9;
-  color: #fff !important;
-} */
-
-
-/* 
-.navbar-nav .nav-link.active, .navbar-nav .nav-link.show { the link in top 
-   background-color: blanchedalmond;
-
-}*/
-/* start Dashbord page  */
-/* .home-stats .stat{
-  background-color: #eee ;
-  border: 1px solid #ccc;
-  padding:20px;
-  font-size: 15px;
-
-}
-
-.home-stats .stat span {
-  display: block;
-  font-size: 40px;
-}
-
-.stat-card {
-  border-radius: 16px;
-  transition: 0.3s;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-.icon {
-  width: 55px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 
 
 
