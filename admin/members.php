@@ -45,20 +45,20 @@ if (isset($_SESSION['Username'])) {
 ?>
 
     <!-- echo "Manager meper page "; -->
-    <h1 class="text-center "> Manage members </h1>
+    <h1 class="text-center "> Manage Members </h1>
     <div class="container">
         <table class="main-table text-center  table table-bordered ">
           <tr>
             <th>#ID</th>
             <th>Username</th>
-            <th>passowrd</th>
-            <th>phone</th>
+            <th>Passowrd</th>
+            <th>Phone</th>
             <th>Email</th>
-            <th>fullname</th>
-            <th>role</th>
+            <th>Fullname</th>
+            <th>Role</th>
             <th>Date</th>
-            <th>grade</th>
-            <th>controle</th>
+            <th>Grade</th>
+            <th>Controle</th>
           </tr>
 
           <?php
@@ -552,7 +552,7 @@ if (isset($_SESSION['Username'])) {
           }
 
 
-          include $tpl . "/footer.php";
+          include $tpl ."footer.php";
         } else {
 
           header("location:index.php");
