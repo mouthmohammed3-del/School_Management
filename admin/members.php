@@ -566,10 +566,4 @@ if (isset($_SESSION['Username'])) {
 
         ?>
 
-        <script>
-          //    $('.confirm').click(function(){
-          // 
-          // return confirm('Are you sure');
-          // 
-          // }); 
-        </script>
+      
