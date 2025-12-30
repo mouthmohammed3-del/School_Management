@@ -195,19 +195,7 @@ if (isset($_SESSION['Username'])) {
 
                 // INSERT
                 // can you use this method 
-                // $stmt=$db->prepare('INSERT into users (username,passwords,phone,Email , Fullname,role,grade)
-                //                                  values (:zname,:zpass,:zphone,:zemail,:zfullname ,:zrole,:zgrade )');
-                // $stmt->execute(array(
-                //   
-                //   'zname'=>$username ,
-                //   'zpass'=>sha1($password),
-                //   'zphone'=>$phone,
-                //   'zemail'=>$email,h
-                //   'zfullname'=>$fullname,
-                //   'zrole'=>$role,
-                //   'zgrade'=>$grade
-                // ));
-
+               
                 $asdate = date("Y-m-d");
                 $stmt = $db->prepare("INSERT INTO users (username, passwords,phone, Email, Fullname, role,Regstatus,Date , grade) VALUES (?, ?, ?, ?, ?, ?,?,?,?)");
                 $stmt->execute(array($username, sha1($password), $phone, $email, $fullname, $role, 1, $asdate, $grade));
