@@ -81,7 +81,6 @@ function counts($item,$table,$role){
 //   global $db;
 //   $stmt2=$db->prepare("SELECT COUNT($ids)  from $table where status=?");
 //   $stmt2->execute([$stat]);
-// 
 //   return $stmt2->fetchColumn();
 // 
 // }
@@ -161,20 +160,3 @@ function countItems() {
 }
 //end function Latest Statistics
 // ?>
-<!-- // <select name="number" id="">
-// 
-// <option value="0"></option> -->
-<!-- // <?php  
-// $stmt = $db->prepare( "SELECT* from users ");
-// $stmt->execute();
-// $Users = $stmt->fetchAll();
-// 
-// foreach($Users as $userss){
-//   echo '<option value=" '.$userss['userID'] .'">'.$userss['username'].'</option>';
-// 
-// }
-// 
-// 
-// 
-// ?>
-</select>

@@ -363,7 +363,7 @@ if (isset($_SESSION['Username'])) {
                         </div>
                         <!-- grade-->
                         <div class="form-group form-group-lg">
-                          <label class="col-sm-3 control-label">grade</label>
+                          <label class="col-sm-3 control-label">Grade</label>
                           <div class="col-sm-9 col-md-10">
                             <input type="text" name="grade" value="<?php echo $row['grade'] ?>" class="form-control" required="true">
                           </div>

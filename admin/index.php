@@ -13,22 +13,17 @@ $pageTitle='login';
 
   header("location:dashboard.php");
   
-  
-
   }
 
  include "init.php";
 
-
 //
-
 //check if user coming from HTTP request
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
   $username= $_POST['user'];
   $password= $_POST['pass'];
   $hashedpass=sha1($password);
-
 
   //3 echo $username.''.$hashedpass;
   $stmt = $db->prepare("
@@ -49,7 +44,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
   if($count > 0){
     // print_r($data);
-
 
     if($data['role'] == 'admin'){
 
