@@ -12,7 +12,7 @@
       <!-- روابط التواصل -->
       <div class="col-md-6 text-center text-md-end">
         <div class="social-links d-flex justify-content-center justify-content-md-end gap-3">
-          <a href="https://github.com/YOUR_GITHUB_USERNAME" 
+          <a href="https://https://github.com/mouthmohammed3-del" 
              target="_blank" 
              class="text-white text-decoration-none"
              title="GitHub"

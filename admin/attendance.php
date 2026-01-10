@@ -1,6 +1,16 @@
 <!-- page attendance -->
+<?php
+session_start();
+$pageTitle = 'Members';
 
+if (!isset($_SESSION['Username']) || $_SESSION['role'] != 'admin') {
+  header("location: login.php"); 
 
+  exit();
+}
+if (isset($_SESSION['Username'])) {
+
+   include "init.php";?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -578,8 +588,10 @@
 </body>
 </html>
 <?php
-    
 
+include "includes/templates/footer.php";
+ 
+}
 
   
 ?>
