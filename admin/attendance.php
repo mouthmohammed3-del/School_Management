@@ -287,17 +287,22 @@ if (isset($_SESSION['Username'])) {
     <script>
         let allStudents = [];
         let todayAttendance = [];
-        
+        // synchronously
         // جلب جميع الطلاب
+        //تلقائيًا Promise أن هذه الدالة ستُرجع JavaScript Engineتعلّم الـ  
         async function fetchStudents() {
+// await
+// يعلّق Execution Context لهذه الدالة فقط
+// يحرر Call Stack
+// ينتظر Promise Result
             try {
                 const response = await fetch('get_students.php');
                 const data = await response.json();
                 allStudents = data;
                 return data;
-            } catch (error) {
+            } catch (error) {           
                 console.error('خطأ في جلب الطلاب:', error);
-                showToast('خطأ في تحميل بيانات الطلاب', 'error');
+                showToast('خطأ في تحميل بيانات الطلاب', 'error');//تضهر في لزاويه
                 return [];
             }
         }
@@ -572,7 +577,11 @@ if (isset($_SESSION['Username'])) {
         
         // تحميل البيانات الأولية
         async function loadInitialData() {
-            await Promise.all([fetchStudents(), fetchTodayAttendance()]);
+            //Promise
+            //Pending (قيد الانتظار): الحالة الأولية؛ العملية لم تنتهِ بعد.
+             // Fulfilled (محقق): العملية اكتملت بنجاح وأنتجت قيمة (Result).
+           // Rejected (مرفوض): العملية فشلت وأنتجت سببًا للفشل (Error).
+             await Promise.all([fetchStudents(), fetchTodayAttendance()]);
             updateTable();
         }
         
