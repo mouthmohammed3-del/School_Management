@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
       exit();
 
   } else {
-      echo '<p style="color:red;">Access Denied! Not Admin.</p>';
+      echo '<p class="alert" style="color:red;">Access Denied! Not Admin.</p>';
   }
 
 } else {
