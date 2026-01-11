@@ -67,7 +67,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="../../../labrariy/index.php">
         <i class="fa fa-bookmark"></i> <?php echo lang('LIBRARY'); ?>
       </a>
     </li>

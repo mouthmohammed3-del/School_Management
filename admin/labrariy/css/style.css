@@ -1,0 +1,254 @@
+/* Your original animation CSS */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body {
+    margin: 0;
+    background: #ffe6f0;
+    /* font-family: 'Great Vibes', cursive; */
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Animated Header */
+.animated-header {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border-bottom: 3px solid #00ffff;
+    padding: 25px 15px;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #00ffff;
+    background: #0d1117;
+    text-align: center;
+    letter-spacing: 0.12em;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+    user-select: none;
+    z-index: 10;
+    text-transform: uppercase;
+}
+
+.animated-header::before {
+    content: attr(data-text);
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: seriousSlide 8s linear infinite;
+    color: #00ffff;
+    /* font-family: 'Share Tech Mono', monospace; */
+    font-weight: 700;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff, 0 0 25px #00ffff;
+}
+
+@keyframes seriousSlide {
+    0% {
+        transform: translateX(0) translateY(-50%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-250%) translateY(-50%);
+        opacity: 1;
+    }
+}
+
+/* Container for floating code symbols */
+.code-symbols-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 5;
+}
+
+.symbol {
+    position: absolute;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 700;
+    font-size: 1.6em;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+    user-select: none;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: floatUpSerious;
+}
+
+.symbol.small {
+    font-size: 1.2em;
+    animation-duration: 6s;
+}
+
+.symbol.medium {
+    font-size: 1.8em;
+    animation-duration: 9s;
+}
+
+.symbol.large {
+    font-size: 2.4em;
+    animation-duration: 12s;
+}
+
+@keyframes floatUpSerious {
+    0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20vh) translateX(20px) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+/* Bubble container */
+.bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Common bubble styles */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(211, 108, 146, 0.3);
+    filter: drop-shadow(0 0 6px rgba(211, 108, 146, 0.5));
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-name: floatUp;
+}
+
+.bubble.small {
+    width: 15px;
+    height: 15px;
+    animation-duration: 6s;
+}
+
+.bubble.medium {
+    width: 30px;
+    height: 30px;
+    animation-duration: 8s;
+}
+
+.bubble.large {
+    width: 50px;
+    height: 50px;
+    animation-duration: 12s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-20vh) translateX(30px);
+        opacity: 0;
+    }
+}
+
+/* Electronic icons container */
+.icons-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    fill: #d36c92;
+    filter: drop-shadow(0 0 5px rgba(211, 108, 146, 0.7));
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes floatIcon1 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(10px, -20px) rotate(15deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.6;
+    }
+}
+
+@keyframes floatIcon2 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(-15px, -25px) rotate(-20deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.7;
+    }
+}
+
+@keyframes floatIcon3 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(20px, -15px) rotate(10deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.5;
+    }
+}
+
+.icon.book {
+    top: 40%;
+    left: 10%;
+    animation-name: floatIcon1;
+    animation-duration: 7s;
+}
+
+.icon.wifi {
+    top: 55%;
+    left: 80%;
+    animation-name: floatIcon2;
+    animation-duration: 6s;
+}
+
+.icon.computer {
+    top: 70%;
+    left: 50%;
+    animation-name: floatIcon3;
+    animation-duration: 8s;
+}

@@ -1,0 +1,122 @@
+/* Product Card Styles */
+.product-card {
+    background-color: #000 !important;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s ease;
+    cursor: default;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+.product-card img {
+    border-radius: 10px;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #075a07;
+    background-color: white;
+}
+
+.product-card .card-title {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.product-card .description {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #a9d18e;
+    min-height: 60px;
+    margin-bottom: 15px;
+}
+
+.product-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #90ee90;
+    margin-bottom: 15px;
+}
+
+.product-card .price .checkmark {
+    color: #00ff00;
+    font-weight: 900;
+}
+
+.search-container {
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#search-input {
+    border: 2px solid teal;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+#search-input:focus {
+    border-color: #075a07;
+    box-shadow: 0 0 0 0.25rem rgba(7, 90, 7, 0.25);
+}
+
+.like-btn.liked {
+    background-color: #e0245e !important;
+    border-color: #e0245e !important;
+    color: white !important;
+}
+
+.dislike-btn.disliked {
+    background-color: #800000 !important;
+    border-color: #800000 !important;
+    color: white !important;
+}
+
+.footer {
+    background-color: #004d4d !important;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #00ffff !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .animated-header {
+        font-size: 2em;
+        padding: 15px 10px;
+    }
+    
+    .product-card img {
+        height: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .animated-header {
+        font-size: 1.5em;
+    }
+    
+    .product-card .card-title {
+        font-size: 1rem;
+    }
+}
