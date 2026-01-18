@@ -35,6 +35,7 @@ if(isset($_SESSION['Username'])){
                 <th>#</th>
                 <th>Categories Name</th>
                 <th>Control</th>
+                <th>Imgae</th>
               </tr>
           
           
@@ -54,6 +55,15 @@ if(isset($_SESSION['Username'])){
                     <a href="categories.php?do=Edit&category_id=<?php echo $category['category_id']; ?>" class="btn btn-warning btn-sm fa fa-edit">Edit</a>
                     <a href="categories.php?do=Delete&category_id=<?php echo $category['category_id']; ?>" class="btn btn-danger btn-sm dbfirm fa fa-trash">delete</a>
                   </td>
+                  <td>
+    <?php 
+    if(!empty($category['category_image'])) {
+        echo "<img src='uploads/categories/" . $category['category_image'] . "' alt='' style='width:50px; height:50px; border-radius:50%;'>";
+    } else {
+        echo "No Image";
+    }
+    ?>
+</td>
                 </tr>
                 <?php
               }
@@ -79,7 +89,7 @@ if(isset($_SESSION['Username'])){
     <div class="container mt-4">
         <h1 class="text-center mb-4">Add New Category</h1>
         
-        <form action="categories.php?do=Insert" method="POST" class="category-form">
+        <form action="categories.php?do=Insert" method="POST" class="category-form" enctype="multipart/form-data">
             
             <!-- Category ID -->
             <div class="form-group">
@@ -113,6 +123,14 @@ if(isset($_SESSION['Username'])){
                 </div>
                 <div class="form-text">Category name must not exceed 20 characters</div>
             </div>
+            <div class="form-group">
+    <label for="category_image" class="form-label">Category Image</label>
+    <div class="input-container">
+        <i class="fas fa-image input-icon"></i>
+        <input type="file" id="category_image" name="category_image" class="form-control" required>
+    </div>
+    <div class="form-text">Allowed formats: JPG, PNG, GIF</div>
+</div>
             
             <!-- Buttons -->
             <div class="form-actions">
@@ -437,7 +455,40 @@ if(isset($_SESSION['Username'])){
       // جلب البيانات من النموذج
       $category_id = $_POST['category_id'];
       $category_name = $_POST['category_name'];
-
+      // جلب بيانات الصورة
+      $imageName = $_FILES['category_image']['name'];
+      $imageSize = $_FILES['category_image']['size'];
+      $imageTmp  = $_FILES['category_image']['tmp_name'];
+      $imageType = $_FILES['category_image']['type'];
+      
+      // قائمة بالامتدادات المسموحة
+      $imageAllowedExtension = array("jpeg", "jpg", "png", "gif");
+      
+      // الحصول على امتداد الصورة المرفوعة
+      $imageExtension = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
+      
+      // التحقق من الأخطاء
+      if (!empty($imageName) && !in_array($imageExtension, $imageAllowedExtension)) {
+          $errors[] = 'هذا الامتداد غير مسموح به';
+      }
+      if ($imageSize > 4194304) { // 4MB
+          $errors[] = 'حجم الصورة لا يجب أن يزيد عن 4 ميجا';
+      }
+      
+      // إذا لم توجد أخطاء
+      if (empty($errors)) {
+          // إنشاء اسم عشوائي للصورة لتجنب التكرار
+          $finalImage = rand(0, 1000000) . '_' . $imageName;
+          
+          // تأكد من إنشاء مجلد uploads/categories في مشروعك
+          move_uploaded_file($imageTmp, "uploads/categories/" . $finalImage);
+      
+          // تعديل جملة الـ INSERT
+          $stmt = $db->prepare("INSERT INTO categories (category_id, category_name, category_image) VALUES (?, ?, ?)");
+          $stmt->execute(array($category_id, $category_name, $finalImage));
+          
+          // ... باقي الكود (رسالة النجاح)
+      }
       // التحقق من عدم وجود أخطاء
       $errors = array();
 
