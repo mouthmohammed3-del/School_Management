@@ -61,15 +61,18 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="attendance.php">
+      <a class="nav-link" href="attendance.php">  
         <i class="fa fa-check-square-o"></i> <?php echo lang('ATTENDANCE'); ?>
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="../../../labrariy/index.php">
-        <i class="fa fa-bookmark"></i> <?php echo lang('LIBRARY'); ?>
-      </a>
+    <a class="nav-link" href="indexlabrary.php">
+  <i class="fa fa-bookmark"></i> <?php echo lang('LIBRARY'); ?>
+</a>
+
+
+        
     </li>
 
     <li class="nav-item">
