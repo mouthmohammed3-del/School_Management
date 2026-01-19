@@ -487,7 +487,7 @@ if(isset($_SESSION['Username'])){
           $stmt = $db->prepare("INSERT INTO categories (category_id, category_name, category_image) VALUES (?, ?, ?)");
           $stmt->execute(array($category_id, $category_name, $finalImage));
           
-          // ... باقي الكود (رسالة النجاح)
+          // ...  (رسالة النجاح)
       }
       // التحقق من عدم وجود أخطاء
       $errors = array();
