@@ -577,6 +577,16 @@ if(isset($_SESSION['Username'])){
               <input type="text" name="category_name" value="<?php echo $category['category_name']; ?>" class="form-dbtrol" required="required" maxlength="20" />
             </div>
           </div>
+
+          <div class="form-group">
+    <label for="category_image" class="form-label">Category Image</label>
+    <div class="input-container">
+        <i class="fas fa-image input-icon"></i>
+        <input type="file" id="category_image" name="category_image" class="form-control" required>
+    </div>
+    <div class="form-text">Allowed formats: JPG, PNG, GIF</div>
+</div>
+
           <!-- زر التحديث -->
           <div class="form-group form-group-lg">
             <div class="col-sm-offset-2 col-sm-10">
