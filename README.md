@@ -1,35 +1,57 @@
-# School_Management
-PHP-based school management system 
-
 # 🏫 School Management System (PHP)
 
-A simple **School Management System** built using **PHP** to manage school data and educational courses.  
-The project is designed for learning purposes and as a foundation for a complete school management application.
+A complete **School Management System** built with **PHP** that covers all essential PHP fundamentals.  
+The project includes **student management, attendance tracking**, and an integrated **learning library** inside the system.
+
+This repository is designed for **learning, practice, and academic purposes**.
 
 ---
 
-## ✨ Features
-- Course and subject management
-- Display courses with:
-  - Name
+## ✨ System Features
+
+### 👨‍🎓 Student Management
+- Add, edit, and delete students
+- View student details
+- Organize students by class or level
+
+### 🕒 Attendance Management
+- Daily student attendance
+- Present / Absent tracking
+- Attendance records overview
+
+### 📚 Learning Library (Built-in)
+- Educational resources inside the system
+- Courses with:
+  - Title
   - Image
   - Description
-  - Price
-- Server-side logic using PHP
-- Clean and simple UI
-- Easy to modify and expand
+- Used as a **PHP learning module**
+
+### 🔐 User System (Optional / Basic)
+- Admin access
+- Secure data handling with PHP
+
+---
+
+## 🎯 Project Goal
+This project was developed to:
+- Learn **PHP fundamentals**
+- Practice CRUD operations
+- Understand server-side logic
+- Work with forms and sessions
+- Build a real-world PHP application
+- Apply basic system architecture
 
 ---
 
 ## 🛠️ Technologies Used
-- PHP
+- PHP (Core PHP)
 - HTML5
 - CSS3
 - JavaScript
-- MySQL (optional / future use)
+- MySQL
+- XAMPP / Localhost
 
 ---
 
 ## 📂 Project Structure
-
-
